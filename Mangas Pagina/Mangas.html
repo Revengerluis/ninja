@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manga Ninja - Mangas</title>
+<link rel="icon" href="Recursos/manga ninja.jpg" type="image/x-icon">
+<style>
+  body { 
+    font-family: Arial, sans-serif; 
+    margin: 0;
+    padding: 0;
+  }
+  .header { 
+    background-color: #333; 
+    padding: 5px; 
+    text-align: center; 
+    color: white;
+    font-size: 25px; /* Cambiar el tamaño de las letras aquí */
+
+  }
+
+  .Recientes { 
+    background-color: white; 
+    padding: 20px; 
+    text-align: center; 
+    color: black;
+    font-size: 30px; /* Cambiar el tamaño de las letras aquí */
+
+  }
+
+  .nav-bar { 
+    background-color: #444; 
+    overflow: hidden; 
+  }
+  .nav-bar a { 
+    float: left; 
+    display: block; 
+    color: white; 
+    text-align: center; 
+    padding: 14px 20px; 
+    text-decoration: none;
+    font-size: 20px; 
+  }
+  .nav-bar a:hover { 
+    background-color: #ddd; 
+    color: black; 
+  }
+  .search-container { 
+    text-align: right; 
+    padding: 14px 20px; 
+  }
+  .search-container input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+  }
+  .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  .container { 
+    padding: 20px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .anime { 
+    border: 1px solid #ddd; 
+    margin-top: 20px; 
+    padding: 15px;
+    width: calc(25% - 20px); /* 25% para ocupar 4 imágenes en una fila */
+    box-sizing: border-box;
+  }
+  .anime:hover { 
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2); 
+  }
+  .footer { 
+    background-color: #333; 
+    padding: 10px; 
+    text-align: center; 
+    color: white; 
+  }
+  
+  /* Agregar un estilo para el texto de los animes */
+  .anime h2 {
+    font-size: 20px; /* Reducir el tamaño del texto para dispositivos móviles */
+    margin-bottom: 10px; /* Agregar un espacio entre el título y la imagen */
+  }
+
+  /* Hacer que las imágenes de los animes sean responsive */
+  .anime img {
+    width: 100%; /* Hacer que la imagen ocupe todo el ancho disponible */
+    height: auto; /* Mantener la proporción de la imagen */
+  }
+
+  .navigation-buttons {
+  text-align: center; /* Para centrar los botones */
+  margin-top: 20px; /* Espacio superior entre los botones y las imágenes */
+}
+
+.espacio{
+  margin-top: 20px;
+}
+
+.navigation-buttons button {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin: 0 10px; /* Espacio entre los botones */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+.navigation-buttons button:hover {
+  background-color: #333; /* Cambio de color al pasar el cursor sobre el botón */
+}
+
+
+  /* Ajustar el tamaño del contenedor de los animes para dispositivos móviles */
+  @media only screen and (max-width: 600px) {
+    .container {
+      padding: 10px; /* Reducir el relleno del contenedor */
+    }
+
+    .anime {
+      width: calc(50% - 10px); /* Ajustar el ancho para que quepan 2 imágenes en una fila */
+      margin-bottom: 20px; /* Agregar un espacio entre las filas de imágenes */
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="Recursos/pngwing.com.png" alt="Logo de Instagram" class="logo" width="50" height="50">
+  <h1 style="display: inline-block; vertical-align: middle;"> Manga-Ninja</h1>
+  <img src="Recursos/pngwing.com.png" alt="Logo de Instagram" class="logo" width="50" height="50">
+</div>
+
+<div class="nav-bar">
+    <ul>
+      <a href="#home" button onclick="Inicio()">Inicio</a>
+      <a href="#animes" button onclick="Mangas()">Mangas</a>
+      <a href="#manhwas" button onclick="Manhwas()">Manhwas</a>
+  <a href="#contact">Contacto</a>
+  <div class="search-container">
+ 
+      <input type="text" id="nombrepelicula" placeholder="Ingrese el nombre" required>
+      <button onclick="Buscar()">Buscar</button>
+  </div>
+</ul>
+
+</div>
+
+<div class="Recientes">
+  Mangas
+</div>
+
+<div class="container">
+  <div class="anime">
+    <h2>Boku No Hero Academy </h2>
+    <img src="Recursos/boku.jpg" alt="Descripción de la primera imagen" width="100%" height="auto" button onclick="bokunohero()">
+  </div>
+
+  <div class="anime">
+    <h2>Jujutsu Kaisen</h2>
+    <img src="Recursos/juju.webp" alt="Descripción de la segunda imagen" width="100%" height="auto"  button onclick="jujutsukaisen()">
+  </div>
+
+  <div class="anime">
+    <h2>Kaiju N.8</h2>
+    <img src="Recursos/kaiju.webp" alt="Descripción de la tercera imagen" width="100%" height="auto" button onclick="kaijun8()">
+  </div>
+
+  <div class="anime">
+    <h2>Sakamoto Days</h2>
+    <img src="Recursos/saka.jpg" alt="Descripción de la cuarta imagen" width="100%" height="auto" button onclick="sakamotodays()">
+  </div>
+
+  <div class="anime">
+    <h2>Wind Breaker</h2>
+    <img src="Recursos/wind.jpg" alt="Descripción de la cuarta imagen" width="100%" height="auto" button onclick="wind()">
+  </div>
+
+  <div class="anime">
+    <h2>Frieren</h2>
+    <img src="Recursos/frieren.webp" alt="Descripción de la cuarta imagen" width="100%" height="auto" button onclick="frieren()">
+  </div>
+
+  <div class="anime">
+    <h2>Servamp</h2>
+    <img src="Recursos/servamp.jpg" alt="Descripción de la cuarta imagen" width="100%" height="auto" button onclick="servamp()">
+  </div>
+
+  <div class="anime">
+    <h2>Misión: Familia Yozakura</h2>
+    <img src="Recursos/Yozakura.jpg" alt="Descripción de la cuarta imagen" width="100%" height="auto" button onclick="familiayozakura()">
+  </div>
+
+  <div class="anime">
+    <h2>Spy x Family</h2>
+    <img src="Recursos/family.webp" alt="Descripción de la cuarta imagen" width="100%" height="auto"button onclick="spyxfamily()" >
+  </div>
+
+  <div class="anime">
+    <h2>Kimetsu No Yaiba</h2>
+    <img src="Recursos/kimetsu.webp" alt="Descripción de la cuarta imagen" width="100%" height="auto" button onclick="kimetsunoyaiba()">
+  </div>
+
+  <div class="anime">
+    <h2>Gachiakuta</h2>
+    <img src="Recursos/gachiakuta.webp" alt="Descripción de la cuarta imagen" width="100%" height="auto" button onclick="gachiakuta()">
+  </div>
+
+  <div class="anime">
+    <h2>Fairy Tail: 100 Years Quest</h2>
+    <img src="Recursos/fairy.jpg" alt="Descripción de la cuarta imagen" width="100%" height="auto" button onclick="fairytail100()">
+  </div>
+
+  <div class="anime">
+    <h2>Shuumatsu No Valkyrie</h2>
+    <img src="Recursos/shuumatsu.jpg" alt="Descripción de la cuarta imagen" width="100%" height="auto" button onclick="shuumatsu()">
+  </div>
+
+  <div class="anime">
+    <h2>Blue Lock</h2>
+    <img src="Recursos/bluelock.jpg" alt="Descripción de la cuarta imagen" width="100%" height="auto" button onclick="bluelock()">
+  </div>
+
+  <div class="anime">
+    <h2>Boruto: Two Blue Vortex</h2>
+    <img src="Recursos/boruto.jpg" alt="Descripción de la cuarta imagen" width="100%" height="auto" button onclick="borutotbv()">
+  </div>
+
+  <div class="anime">
+    <h2>Dragon Ball: Super</h2>
+    <img src="Recursos/dragonball.jpg" alt="Descripción de la cuarta imagen" width="100%" height="auto" button onclick="dragonball()">
+  </div>
+  
+</div>
+
+<div class="navigation-buttons">
+  <button onclick="Pagina()">1</button>
+  <button onclick="Pagina2()">Siguiente 2</button>
+</div>
+
+<div class="espacio">
+
+</div>
+
+<div id="disqus_thread" href="pag.html"></a>></div>
+
+<div class="footer">
+  <p>© Manga Ninja</p>
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>

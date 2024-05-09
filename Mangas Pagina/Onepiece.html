@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manga Ninja - One Piece</title>
+<link rel="icon" href="Recursos/manga ninja.jpg" type="image/x-icon">
+<style>
+  body { 
+    font-family: Arial, sans-serif; 
+    margin: 0;
+    padding: 0;
+  }
+  .header { 
+    background-color: #333; 
+    padding: 5px; 
+    text-align: center; 
+    color: white;
+    font-size: 25px; /* Cambiar el tamaño de las letras aquí */
+  }
+
+  .Recientes { 
+    background-color: white; 
+    padding: 20px; 
+    text-align: center; 
+    color: black;
+    font-size: 30px; /* Cambiar el tamaño de las letras aquí */
+  }
+
+  .nav-bar { 
+    background-color: #444; 
+    overflow: hidden; 
+  }
+  .nav-bar a { 
+    float: left; 
+    display: block; 
+    color: white; 
+    text-align: center; 
+    padding: 14px 20px; 
+    text-decoration: none; 
+    font-size: 20px; 
+  }
+  .nav-bar a:hover { 
+    background-color: #ddd; 
+    color: black; 
+  }
+  .search-container { 
+    text-align: center; /* Centro el contenido */
+    padding: 14px 20px; 
+  }
+  .search-container input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    width: 70%; /* Ajusta el tamaño del campo de búsqueda */
+    max-width: 300px; /* Limita el tamaño máximo */
+  }
+  .search-container button {
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  .container { 
+    padding: 20px; 
+    display: flex;
+    justify-content: center; /* Centro los elementos horizontalmente */
+    align-items: center; /* Centro los elementos verticalmente */
+    flex-direction: column; /* Alinear elementos en columna */
+  }
+  .anime { 
+    border: 1px solid #ddd; 
+    margin-top: 20px; 
+    padding: 15px;
+    width: 80%; /* Cambio el ancho para que ocupe toda la pantalla */
+    max-width: 600px; /* Limita el ancho máximo */
+    box-sizing: border-box;
+    text-align: center; /* Centro el contenido */
+  }
+  .anime img { /* Cambio de estilo para la imagen */
+    width: 80%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+    height: auto;
+    margin: 0 auto; /* Centrado horizontal */
+    display: block; /* Asegura que esté centrada horizontalmente */
+  }
+  
+  .Sinopsis { /* Estilo para los datos técnicos */
+    margin-top: 20px; /* Espacio entre la sinopsis y los datos técnicos */
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    justify-content: center; /* Alineación vertical */
+    flex-direction: column; /* Alineación vertical */
+    align-items: center; /* Alineación vertical */
+  }
+  .Sinopsis p { /* Estilo para los datos técnicos */
+    text-align: center; /* Centrado */
+  }
+
+  .datos-tecnicos { /* Estilo para los datos técnicos */
+    margin-top: 20px; /* Espacio entre la sinopsis y los datos técnicos */
+    display: flex;
+    justify-content: space-around; /* Alineación horizontal */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+  }
+  .datos-tecnicos p { /* Estilo para los datos técnicos */
+    text-align: center; /* Centrado */
+  }
+
+  .Descargar { /* Estilo para los datos técnicos */
+    margin-top: 20px; /* Espacio entre la sinopsis y los datos técnicos */
+    display: flex;
+    justify-content: space-around; /* Alineación horizontal */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+  }
+  .Descargar p { /* Estilo para los datos técnicos */
+    font-weight: bold; /* Poner en negrita */
+    text-align: center; /* Centrado */
+  }
+
+  .botones-capitulos { /* Estilo para los botones de los capítulos */
+    margin-top: 20px; /* Espacio entre los datos técnicos y los botones */
+    text-align: center; /* Centrado horizontal */
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas pequeñas */
+    justify-content: center; /* Centra los botones horizontalmente */
+  }
+  .botones-capitulos button { /* Estilo para los botones */
+    margin: 5px; /* Espacio entre los botones */
+    padding: 10px 20px; /* Padding del botón */
+  }
+  .footer { 
+    background-color: #333; 
+    padding: 10px; 
+    text-align: center; 
+    color: white; 
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="Recursos/pngwing.com.png" alt="Logo de Instagram" class="logo" width="50" height="50">
+  <h1 style="display: inline-block; vertical-align: middle;"> Manga-Ninja</h1>
+  <img src="Recursos/pngwing.com.png" alt="Logo de Instagram" class="logo" width="50" height="50">
+</div>
+
+<div class="nav-bar">
+    <ul>
+      <a href="#home" button onclick="Inicio()">Inicio</a>
+      <a href="#animes" button onclick="Mangas()">Mangas</a>
+      <a href="#manhwas" button onclick="Manhwas()">Manhwas</a>
+  <a href="#contact">Contacto</a>
+  <div class="search-container">
+      <input type="text" id="nombrepelicula" placeholder="Ingrese el nombre" required>
+      <button onclick="Buscar()">Buscar</button>
+  </div>
+</ul>
+</div>
+
+<div class="Recientes">
+  Manga
+</div>
+
+<div class="container">
+  <div class="anime">
+    <h2>One Piece Tomos (01-108)</h2>
+    <img src="Recursos/onepiece.jpg" alt="Descripción de la primera imagen">
+
+    <div class="Sinopsis">
+      <p>
+        Sinopsis:
+      </p>
+      <p>
+        La historia sigue a un joven cielo llamado Rudo que, después de ser condenado falsamente por asesinato, 
+        es expulsado del cielo al abismo. Allí, conoce a un conserje cercano llamado Engine,
+        quien lo rescata de una horda de bestias.
+      </p>
+    </div>
+         
+    <div class="datos-tecnicos">
+      <p>Idioma: (Español)</p>
+      <p>Fecha:  (2022-Presente)</p>
+      <p>Formato:(CBR)</p>
+      <p>Estado: (En Publicacion)</p>
+      <p>Autor:  (Kei Urana)</p>
+    </div>
+
+    <div class="Descargar">
+      <p>
+        Descargar Por Mediafire
+      </p>
+      <p>
+        Full Color
+      </p>
+    </div>
+    <div class="botones-capitulos">
+      <button class="boton" onclick="irAtomo04()">Tomos (01-04)</button>
+      <button class="boton" onclick="irAtomo08()">Tomos (05-08)</button>
+      <button class="boton" onclick="irAtomo12()">Tomos (09-12)</button>
+      <button class="boton" onclick="irAtomo16()">Tomos (13-16)</button>
+      <button class="boton" onclick="irAtomo20()">Tomos (17-20)</button>
+      <button class="boton" onclick="irAtomo24()">Tomos (21-24)</button>
+      <button class="boton" onclick="irAtomo28()">Tomos (25-28)</button>
+      <button class="boton" onclick="irAtomo32()">Tomos (29-32)</button>
+      <button class="boton" onclick="irAtomo37()">Tomos (33-37)</button>
+      <button class="boton" onclick="irAtomo42()">Tomos (38-42)</button>
+      <button class="boton" onclick="irAtomo46()">Tomos (43-46)</button>
+      <button class="boton" onclick="irAtomo50()">Tomos (47-50)</button>
+      <button class="boton" onclick="irAtomo54()">Tomos (51-54)</button>
+      <button class="boton" onclick="irAtomo58()">Tomos (55-58)</button>
+      <button class="boton" onclick="irAtomo61()">Tomos (59-61)</button>
+      <button class="boton" onclick="irAtomo66()">Tomos (62-66)</button>
+      <button class="boton" onclick="irAtomo71()">Tomos (67-71)</button>
+      <button class="boton" onclick="irAtomo76()">Tomos (72-76)</button>
+      <button class="boton" onclick="irAtomo80()">Tomos (77-80)</button>
+      <button class="boton" onclick="irAtomo83()">Tomos (81-83)</button>
+      <button class="boton" onclick="irAtomo86()">Tomos (84-86)</button>
+      <button class="boton" onclick="irAtomo90()">Tomos (87-90)</button>
+      <button class="boton" onclick="irAtomo93()">Tomos (91-93)</button>
+      <button class="boton" onclick="irAtomo95()">Tomos (94-95)</button>
+      <button class="boton" onclick="irAtomo97()">Tomos (96-97)</button>
+      <button class="boton" onclick="irAtomo98()">Tomo  (98)   </button>
+      <button class="boton" onclick="irAtomo99()">Tomo  (99)   </button>
+    </div>
+
+    <div class="Descargar">
+      <p>
+        Descargar Por Mediafire
+      </p>
+      <p>
+        Original
+      </p>
+    </div>
+    <div class="botones-capitulos">
+      <button class="boton" onclick="irAtomo01()">Tomos (01-04)</button>
+      <button class="boton" onclick="irAtomo05()">Tomos (05-08)</button>
+      <button class="boton" onclick="irAtomo09()">Tomos (09-12)</button>
+      <button class="boton" onclick="irAtomo13()">Tomos (13-16)</button>
+      <button class="boton" onclick="irAtomo17()">Tomos (17-20)</button>
+      <button class="boton" onclick="irAtomo21()">Tomos (21-24)</button>
+      <button class="boton" onclick="irAtomo25()">Tomos (25-28)</button>
+      <button class="boton" onclick="irAtomo29()">Tomos (29-32)</button>
+      <button class="boton" onclick="irAtomo33()">Tomos (33-37)</button>
+      <button class="boton" onclick="irAtomo38()">Tomos (38-41) </button>
+      <button class="boton" onclick="irAtomo042()">Tomos (42-45)</button>
+      <button class="boton" onclick="irAtomo046()">Tomos (46-48)</button>
+      <button class="boton" onclick="irAtomo49()">Tomos (49-50) </button>
+      <button class="boton" onclick="irAtomo51()">Tomos (51-54) </button>
+      <button class="boton" onclick="irAtomo55()">Tomos (55-57)</button>
+      <button class="boton" onclick="irAtomo60()">Tomos (58-60)</button>
+      <button class="boton" onclick="irAtomo63()">Tomos (61-63) </button>
+      <button class="boton" onclick="irAtomo64()">Tomos (64-66) </button>
+      <button class="boton" onclick="irAtomo67()">Tomos (67-68)</button>
+      <button class="boton" onclick="irAtomo69()">Tomos (69-70)</button>
+      <button class="boton" onclick="irAtomo74()">Tomos (71-74) </button>
+      <button class="boton" onclick="irAtomo75()">Tomos (75-77) </button>
+      <button class="boton" onclick="irAtomo78()">Tomos (78-80)</button>
+      <button class="boton" onclick="irAtomo81()">Tomos (81-83)</button>
+      <button class="boton" onclick="irAtomo84()">Tomos (84-86) </button>
+      <button class="boton" onclick="irAtomo87()">Tomos (87-89) </button>
+      <button class="boton" onclick="irAtomo92()">Tomos (90-92)</button>
+      <button class="boton" onclick="irAtomo093()">Tomos (93-95)</button>
+      <button class="boton" onclick="irAtomo96()">Tomos  (96-98) </button>
+      <button class="boton" onclick="irAtomo101()">Tomos (99-101) </button>
+      <button class="boton" onclick="irAtomo102()">Tomos (102-103)</button>
+      <button class="boton" onclick="irAtomo105()">Tomos (104-105)</button>
+      <button class="boton" onclick="irAtomo107()">Tomos (106-107)</button>
+      <button class="boton" onclick="irAtomo108()">Tomo  (108)</button>
+    </div>
+  </div>
+</div>
+
+<script>
+    // Función para redirigir a la página del capítulo seleccionado
+    function irAtomo04() {
+          window.location.href = 'https://www.fireload.com/95c25a79689799e3/OP-T01-04.rar ';
+        }
+
+        // Función para redirigir a la página del capítulo seleccionado
+        function irAtomo08() {
+         window.location.href = ' https://www.fireload.com/e2b0625328a84dc4/OP-T05-08.rar ';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo12() {
+         window.location.href = 'https://www.fireload.com/29d239c56269f8d5/OP-T09-12.rar ';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo16() {
+         window.location.href = 'https://www.fireload.com/3ed6a427b1d46def/OP-T13-16.rar ';
+       }
+
+       // Función para redirigir a la página del capítulo seleccionado
+    function irAtomo20() {
+          window.location.href = ' https://www.fireload.com/592ca5cc88cc06cf/OP-T17-20.rar';
+        }
+
+        // Función para redirigir a la página del capítulo seleccionado
+        function irAtomo24() {
+         window.location.href = 'https://www.fireload.com/8a04b96f996e7585/OP-T21-24.rar ';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo28() {
+         window.location.href = '  https://www.fireload.com/cf6bc42d0e1acd82/OP-T25-28.rar ';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo32() {
+         window.location.href = 'https://www.fireload.com/2e76c0477f70aef5/OP-T29-32.rar ';
+       }
+
+        // Función para redirigir a la página del capítulo seleccionado
+    function irAtomo37() {
+          window.location.href = 'https://www.fireload.com/7759c9cf66e465a8/OP-T33-37.rar ';
+        }
+
+        // Función para redirigir a la página del capítulo seleccionado
+        function irAtomo42() {
+         window.location.href = 'https://www.fireload.com/e2d4020f112bf37f/OP-T38-42.rar ';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo46() {
+         window.location.href =  ' https://www.fireload.com/14613f3440e0b5dc/OP-T43-46.rar     ';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo50() {
+         window.location.href = 'https://www.fireload.com/13cbe532ea87ba38/OP-T47-50.rar ';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo54() {
+         window.location.href = ' https://www.fireload.com/234d7a0d8283ada0/OP-T51-54.rar';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo58() {
+         window.location.href = 'https://www.fireload.com/5ff8c8804533320d/OP-T55-58.rar ';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo61() {
+         window.location.href = ' https://www.fireload.com/0bba696f59ec96bd/OP-T59-61.rar';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo66() {
+         window.location.href = ' https://www.fireload.com/684381deb1fba1f6/OP-T62-66.rar';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo71() {
+         window.location.href = 'https://www.fireload.com/cc0d64ed7a74158d/OP-T67-71.rar ';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo76() {
+         window.location.href = 'https://www.fireload.com/192ec1a8fc1f4131/OP-T72-76.rar ';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo80() {
+         window.location.href = ' https://www.fireload.com/d80661dfcad2671c/OP-T77-80.rar';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo83() {
+         window.location.href = 'https://www.fireload.com/3e8f4c95b27683b0/OP-T81-83.rar ';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo86() {
+         window.location.href = ' https://www.fireload.com/3ff9176851d072da/OP-T84-86.rar';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo90() {
+         window.location.href = 'https://www.fireload.com/0e0275e5c81a4b80/OP-T87-90.rar ';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo93() {
+         window.location.href = ' https://www.fireload.com/2c16b145ebf3f0a4/OP-T91-93.rar';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo95() {
+         window.location.href = ' https://www.fireload.com/f3b887c262654c50/OP-T94-95.rar';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo97() {
+         window.location.href = ' https://www.fireload.com/fd86a18b4c419bd9/OP-T96-97.rar';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo98() {
+         window.location.href = 'https://www.fireload.com/ac5670dbbe2a1ed1/OP-T98.rar ';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo99() {
+         window.location.href = 'https://www.fireload.com/4fd8808e5cfe64ec/OPColor-T99.rar ';
+       }
+
+
+
+
+
+</script>
+
+<div id="disqus_thread" href="pag.html"></a>></div>
+
+<div class="footer">
+  <p>© Manga Ninja</p>
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>     

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manga Ninja - Kaiju N.8</title>
+<link rel="icon" href="Recursos/manga ninja.jpg" type="image/x-icon">
+<style>
+  body { 
+    font-family: Arial, sans-serif; 
+    margin: 0;
+    padding: 0;
+  }
+  .header { 
+    background-color: #333; 
+    padding: 5px; 
+    text-align: center; 
+    color: white;
+    font-size: 25px; /* Cambiar el tamaño de las letras aquí */
+  }
+
+  .Recientes { 
+    background-color: white; 
+    padding: 20px; 
+    text-align: center; 
+    color: black;
+    font-size: 30px; /* Cambiar el tamaño de las letras aquí */
+  }
+
+  .nav-bar { 
+    background-color: #444; 
+    overflow: hidden; 
+  }
+  .nav-bar a { 
+    float: left; 
+    display: block; 
+    color: white; 
+    text-align: center; 
+    padding: 14px 20px; 
+    text-decoration: none; 
+    font-size: 20px; 
+  }
+  .nav-bar a:hover { 
+    background-color: #ddd; 
+    color: black; 
+  }
+  .search-container { 
+    text-align: center; /* Centro el contenido */
+    padding: 14px 20px; 
+  }
+  .search-container input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    width: 70%; /* Ajusta el tamaño del campo de búsqueda */
+    max-width: 300px; /* Limita el tamaño máximo */
+  }
+  .search-container button {
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  .container { 
+    padding: 20px; 
+    display: flex;
+    justify-content: center; /* Centro los elementos horizontalmente */
+    align-items: center; /* Centro los elementos verticalmente */
+    flex-direction: column; /* Alinear elementos en columna */
+  }
+  .anime { 
+    border: 1px solid #ddd; 
+    margin-top: 20px; 
+    padding: 15px;
+    width: 80%; /* Cambio el ancho para que ocupe toda la pantalla */
+    max-width: 600px; /* Limita el ancho máximo */
+    box-sizing: border-box;
+    text-align: center; /* Centro el contenido */
+  }
+  .anime img { /* Cambio de estilo para la imagen */
+    width: 80%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+    height: auto;
+    margin: 0 auto; /* Centrado horizontal */
+    display: block; /* Asegura que esté centrada horizontalmente */
+  }
+  
+  .Sinopsis { /* Estilo para los datos técnicos */
+    margin-top: 20px; /* Espacio entre la sinopsis y los datos técnicos */
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    justify-content: center; /* Alineación vertical */
+    flex-direction: column; /* Alineación vertical */
+    align-items: center; /* Alineación vertical */
+  }
+  .Sinopsis p { /* Estilo para los datos técnicos */
+    text-align: center; /* Centrado */
+  }
+
+  .datos-tecnicos { /* Estilo para los datos técnicos */
+    margin-top: 20px; /* Espacio entre la sinopsis y los datos técnicos */
+    display: flex;
+    justify-content: space-around; /* Alineación horizontal */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+  }
+  .datos-tecnicos p { /* Estilo para los datos técnicos */
+    text-align: center; /* Centrado */
+  }
+
+  .Descargar { /* Estilo para los datos técnicos */
+    margin-top: 20px; /* Espacio entre la sinopsis y los datos técnicos */
+    display: flex;
+    justify-content: space-around; /* Alineación horizontal */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+  }
+  .Descargar p { /* Estilo para los datos técnicos */
+    font-weight: bold; /* Poner en negrita */
+    text-align: center; /* Centrado */
+  }
+
+  .botones-capitulos { /* Estilo para los botones de los capítulos */
+    margin-top: 20px; /* Espacio entre los datos técnicos y los botones */
+    text-align: center; /* Centrado horizontal */
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas pequeñas */
+    justify-content: center; /* Centra los botones horizontalmente */
+  }
+  .botones-capitulos button { /* Estilo para los botones */
+    margin: 5px; /* Espacio entre los botones */
+    padding: 10px 20px; /* Padding del botón */
+  }
+  .footer { 
+    background-color: #333; 
+    padding: 10px; 
+    text-align: center; 
+    color: white; 
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="Recursos/pngwing.com.png" alt="Logo de Instagram" class="logo" width="50" height="50">
+  <h1 style="display: inline-block; vertical-align: middle;"> Manga-Ninja</h1>
+  <img src="Recursos/pngwing.com.png" alt="Logo de Instagram" class="logo" width="50" height="50">
+</div>
+
+<div class="nav-bar">
+    <ul>
+      <a href="#home" button onclick="Inicio()">Inicio</a>
+      <a href="#animes" button onclick="Mangas()">Mangas</a>
+      <a href="#manhwas" button onclick="Manhwas()">Manhwas</a>
+  <a href="#contact">Contacto</a>
+  <div class="search-container">
+      <input type="text" id="nombrepelicula" placeholder="Ingrese el nombre" required>
+      <button onclick="Buscar()">Buscar</button>
+  </div>
+</ul>
+</div>
+
+<div class="Recientes">
+  Manga
+</div>
+
+<div class="container">
+  <div class="anime">
+    <h2>Kaiju N.8 Tomos (01-11)</h2>
+    <img src="Recursos/kaiju.webp" alt="Descripción de la primera imagen">
+
+    <div class="Sinopsis">
+      <p>
+        Sinopsis:
+      </p>
+      <p>
+        Japón tiene la mayor tasa de incidencias por ataques de Kaijus de todo el mundo. Los Kaijus irrumpen continuamente y sin piedad en las vidas cotidianas de la gente. Kafka Hibino,
+        que siempre quiso ser un miembro de las Fuerzas de Defensa, actualmente trabaja como limpiador de cadáveres de Kaijus.
+      </p>
+    </div>
+         
+    <div class="datos-tecnicos">
+      <p>Idioma: (Español)</p>
+      <p>Fecha:  (2020-Actualidad)</p>
+      <p>Formato: (CBR)</p>
+      <p>Estado: (En Publicacion)</p>
+      <p>Autor: (Keiji Ando)</p>
+    </div>
+
+    <div class="Descargar">
+      <p>
+        Descargar Por Mediafire
+      </p>
+    </div>
+    <div class="botones-capitulos">
+      <button class="boton" onclick="irAtomo02()">Tomos 01-02</button>
+      <button class="boton" onclick="irAtomo04()">Tomos 03-04</button>
+      <button class="boton" onclick="irAtomo06()">Tomos 05-06</button>
+      <button class="boton" onclick="irAtomo08()">Tomos 07-08</button>
+      <!-- Agrega más botones según los capítulos disponibles -->
+      <button class="boton" onclick="irAtomo09()">Tomos 09-10</button>
+      <button class="boton" onclick="irAtomo11()">Tomo 11</button>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+   
+        // Función para redirigir a la página del capítulo seleccionado
+        function irAtomo02() {
+          window.location.href = ' https://ouo.io/RUWtZF  ';
+        }
+
+        // Función para redirigir a la página del capítulo seleccionado
+        function irAtomo04() {
+          window.location.href = ' https://ouo.io/CYfXB3A  ';
+        }
+
+        // Función para redirigir a la página del capítulo seleccionado
+        function irAtomo06() {
+          window.location.href = ' https://ouo.io/JuY3k7m  ';
+        }
+
+        // Función para redirigir a la página del capítulo seleccionado
+        function irAtomo08() {
+          window.location.href = '  https://ouo.io/3KchAF ';
+        }
+
+        // Función para redirigir a la página del capítulo seleccionado
+        function irAtomo10() {
+          window.location.href = '  https://ouo.io/p7H9pc ';
+        }
+
+        // Función para redirigir a la página del capítulo seleccionado
+        function irAtomo11() {
+          window.location.href = ' https://ouo.io/y4zOhnu ';
+        }
+
+        // Función para redirigir a la página del capítulo seleccionado
+        function irAtomo() {
+          window.location.href = '   ';
+        }
+
+        // Función para redirigir a la página del capítulo seleccionado
+        function irAtomo() {
+          window.location.href = '   ';
+        }
+
+        // Función para redirigir a la página del capítulo seleccionado
+        function irAtomo() {
+          window.location.href = '   ';
+        }
+
+
+
+</script>
+
+<div id="disqus_thread" href="pag.html"></a>></div>
+
+<div class="footer">
+  <p>© Manga Ninja</p>
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>     

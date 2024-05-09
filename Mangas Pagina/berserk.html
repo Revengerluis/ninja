@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manga Ninja - Berserk</title>
+<link rel="icon" href="Recursos/manga ninja.jpg" type="image/x-icon">
+<style>
+  body { 
+    font-family: Arial, sans-serif; 
+    margin: 0;
+    padding: 0;
+  }
+  .header { 
+    background-color: #333; 
+    padding: 5px; 
+    text-align: center; 
+    color: white;
+    font-size: 25px; /* Cambiar el tamaño de las letras aquí */
+  }
+
+  .Recientes { 
+    background-color: white; 
+    padding: 20px; 
+    text-align: center; 
+    color: black;
+    font-size: 30px; /* Cambiar el tamaño de las letras aquí */
+  }
+
+  .nav-bar { 
+    background-color: #444; 
+    overflow: hidden; 
+  }
+  .nav-bar a { 
+    float: left; 
+    display: block; 
+    color: white; 
+    text-align: center; 
+    padding: 14px 20px; 
+    text-decoration: none; 
+    font-size: 20px; 
+  }
+  .nav-bar a:hover { 
+    background-color: #ddd; 
+    color: black; 
+  }
+  .search-container { 
+    text-align: center; /* Centro el contenido */
+    padding: 14px 20px; 
+  }
+  .search-container input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    width: 70%; /* Ajusta el tamaño del campo de búsqueda */
+    max-width: 300px; /* Limita el tamaño máximo */
+  }
+  .search-container button {
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  .container { 
+    padding: 20px; 
+    display: flex;
+    justify-content: center; /* Centro los elementos horizontalmente */
+    align-items: center; /* Centro los elementos verticalmente */
+    flex-direction: column; /* Alinear elementos en columna */
+  }
+  .anime { 
+    border: 1px solid #ddd; 
+    margin-top: 20px; 
+    padding: 15px;
+    width: 80%; /* Cambio el ancho para que ocupe toda la pantalla */
+    max-width: 600px; /* Limita el ancho máximo */
+    box-sizing: border-box;
+    text-align: center; /* Centro el contenido */
+  }
+  .anime img { /* Cambio de estilo para la imagen */
+    width: 80%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+    height: auto;
+    margin: 0 auto; /* Centrado horizontal */
+    display: block; /* Asegura que esté centrada horizontalmente */
+  }
+  
+  .Sinopsis { /* Estilo para los datos técnicos */
+    margin-top: 20px; /* Espacio entre la sinopsis y los datos técnicos */
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    justify-content: center; /* Alineación vertical */
+    flex-direction: column; /* Alineación vertical */
+    align-items: center; /* Alineación vertical */
+  }
+  .Sinopsis p { /* Estilo para los datos técnicos */
+    text-align: center; /* Centrado */
+  }
+
+  .datos-tecnicos { /* Estilo para los datos técnicos */
+    margin-top: 20px; /* Espacio entre la sinopsis y los datos técnicos */
+    display: flex;
+    justify-content: space-around; /* Alineación horizontal */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+  }
+  .datos-tecnicos p { /* Estilo para los datos técnicos */
+    text-align: center; /* Centrado */
+  }
+
+  .Descargar { /* Estilo para los datos técnicos */
+    margin-top: 20px; /* Espacio entre la sinopsis y los datos técnicos */
+    display: flex;
+    justify-content: space-around; /* Alineación horizontal */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+  }
+  .Descargar p { /* Estilo para los datos técnicos */
+    font-weight: bold; /* Poner en negrita */
+    text-align: center; /* Centrado */
+  }
+
+  .botones-capitulos { /* Estilo para los botones de los capítulos */
+    margin-top: 20px; /* Espacio entre los datos técnicos y los botones */
+    text-align: center; /* Centrado horizontal */
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas pequeñas */
+    justify-content: center; /* Centra los botones horizontalmente */
+  }
+  .botones-capitulos button { /* Estilo para los botones */
+    margin: 5px; /* Espacio entre los botones */
+    padding: 10px 20px; /* Padding del botón */
+  }
+  .footer { 
+    background-color: #333; 
+    padding: 10px; 
+    text-align: center; 
+    color: white; 
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="Recursos/pngwing.com.png" alt="Logo de Instagram" class="logo" width="50" height="50">
+  <h1 style="display: inline-block; vertical-align: middle;"> Manga-Ninja</h1>
+  <img src="Recursos/pngwing.com.png" alt="Logo de Instagram" class="logo" width="50" height="50">
+</div>
+
+<div class="nav-bar">
+    <ul>
+      <a href="#home" button onclick="Inicio()">Inicio</a>
+      <a href="#animes" button onclick="Mangas()">Mangas</a>
+      <a href="#manhwas" button onclick="Manhwas()">Manhwas</a>
+      <a href="#contact">Contacto</a>
+      <div class="search-container">
+         <input type="text" id="nombrepelicula" placeholder="Ingrese el nombre" required>
+         <button onclick="Buscar()">Buscar</button>
+      </div>
+  </ul>
+</div>
+
+<div class="Recientes">
+  Mangas
+</div>
+
+<div class="container">
+  <div class="anime">
+    <h2>Berserk  Tomos (01-42)</h2>
+    <img src="Recursos/berserk.jpg" alt="Descripción de la primera imagen">
+
+    <div class="Sinopsis">
+      <p>
+        Sinopsis:
+      </p>
+      <p>
+        La historia está ambientada en una época con tintes de la Europa medieval y renacentista,
+        en la cual se cuenta la vida de Guts (cuyo nombre fue traducido como Gatsu en las primeras ediciones en castellano),
+        un mercenario huérfano que acompañado del elfo Puck, caza seres demoníacos llamados apóstoles. 
+      </p>
+    </div>
+         
+    <div class="datos-tecnicos">
+      <p>Idioma: (Español)</p>
+      <p>Fecha:  (1989-Presente)</p>
+      <p>Formato:(CBR)</p>
+      <p>Estado: (En Publicacion)</p>
+      <p>Autor:  (Kentaro Miura)</p>
+    </div>
+
+    <div class="Descargar">
+      <p>
+        Descargar Por Mediafire
+      </p>
+    </div>
+    <div class="botones-capitulos">
+      <button class="boton" onclick="irAtomo()">Tomos (-)</button>
+      <button class="boton" onclick="irAtomo()">Tomos (-)</button>
+      <button class="boton" onclick="irAtomo()">Tomos (-)</button>
+      <button class="boton" onclick="irAtomo()">Tomos (-)</button>
+    </div>
+  </div>
+</div>
+
+<script>
+    // Función para redirigir a la página del capítulo seleccionado
+    function irAtomo() {
+          window.location.href = ' ';
+        }
+
+        // Función para redirigir a la página del capítulo seleccionado
+        function irAtomo() {
+         window.location.href = ' ';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo() {
+         window.location.href = ' ';
+       }
+
+         // Función para redirigir a la página del capítulo seleccionado
+         function irAtomo() {
+         window.location.href = ' ';
+       }
+       
+    
+</script>
+
+<div id="disqus_thread" href="pag.html"></a></div>
+
+<div class="footer">
+  <p>© Manga Ninja</p>
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>     
